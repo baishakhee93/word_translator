@@ -1,3 +1,43 @@
+import 'package:Word_Translator/screens/TranslationScreen.dart';
+import 'package:Word_Translator/services/AppLocalizations.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'generated/l10n.dart'; // Import generated localization file
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Intl Demo',
+      localizationsDelegates: [
+        // Add built-in localization delegate(s) for specific locales
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        // Add your custom delegate(s)
+        AppLocalizations.delegate, // Generated delegate from intl tool
+      ],
+      supportedLocales: [
+        const Locale('en', ''), // English, no country code
+        const Locale('es', ''), // Spanish, no country code
+        const Locale('hi', ''), // Spanish, no country code
+        const Locale('bn', ''), // Spanish, no country code
+        // Add more locales as needed
+      ],
+      // Set the initial locale
+      locale: const Locale('en', ''), // English as the default locale
+      //home: MyHomePage(),
+      // Example to use a home screen with internationalization
+      home: TranslationScreen(), // Replace with your home screen widget
+    );
+  }
+}
+
+
+/*
 import 'package:Word_Translator/services/TranslationService.dart';
 import 'package:flutter/material.dart';
 
@@ -182,3 +222,4 @@ class _TranslationScreenState extends State<TranslationScreen> {
     );
   }
 }
+*/
